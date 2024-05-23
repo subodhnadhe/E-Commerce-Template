@@ -1,0 +1,1 @@
+# This is a E-Commerce website template created solely using html and css.
