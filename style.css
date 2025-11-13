@@ -143,56 +143,63 @@ p{
     padding-top: 20px;
   flex-wrap: wrap;
 }
-#banner{
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    padding:1rem 6rem;
-    flex-wrap: wrap;
-    justify-content: space-between;
+#banner {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;            
+  flex-wrap: wrap;      
+  justify-content: space-between;
+  align-items: stretch; 
+}
+
+#banner .banner-box {
+  flex: 1 1 320px;      
+  min-width: 260px;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.25rem;
+  border-radius: 10px;
+  color: #072;          
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
 }
 #banner .banner-box1{
-    margin-left: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-    width: 40%;
-    height: 40vh;
-    background-position: center;
-    background-size:cover;
-    background-color: rgb(255, 186, 67);
+     background-color: rgb(255,186,67); color: #2a1700;
     
 }
 #banner .banner-box2{
-    margin-right: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-    width: 40%;
-    height: 40vh;
-    background-position: center;
-    background-size:cover;
-    background-color: rgb(109, 158, 169);
-    
+     background-color: rgb(109,158,169); color: #071e22;
 }
-#banner button{
-    margin: 2rem;
-    background-color: #fff;
-    font-size: larger;
-    padding: 0.2rem;
-    
+#banner .banner-box h4 {
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  margin: 0 0 0.25rem 0;
+  font-weight: 600;
 }
-#banner button:hover{
-    margin: 2rem;
-    background-color: #aefc84;
-    font-size: larger;
-    padding: 0.2rem;
-    
+#banner .banner-box h2 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.05;
 }
+#banner .banner-box span {
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+}
+
+
+#banner .banner-box button {
+  align-self: flex-start;      
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 1rem;
+  background: #fff;
+}
+
 .offer-heading{
     margin-left: 6rem;
 }
@@ -257,15 +264,15 @@ p{
     position: absolute;
     top: 50%; 
     left: 20%; 
-    transform: translate(-50%, -50%); /* Center the text container */
+    transform: translate(-50%, -50%); 
     text-align: center;
     
 }
 
 .banner2-text h2
  {
-    margin: 0; /* Remove default margin */
-    padding: 10px; /* Add padding for better readability */
+    margin: 0; 
+    padding: 10px; 
     color: #0e2302;
     font-weight: 500;
 }
@@ -275,7 +282,7 @@ p{
 }
 
 
-/* overall about container */
+
 .about {
   max-width: 1100px;        
   margin: 3rem auto;       
@@ -323,6 +330,21 @@ p{
 }
 
 /* ===== responsive breakpoints ===== */
+@media (max-width: 900px) {
+  #banner { gap: 0.9rem; padding: 0.75rem; }
+  #banner .banner-box {
+    flex: 1 1 100%;    /* force single-column stacking */
+    min-width: 0;
+    text-align: center;
+    align-items: center;   
+  }
+  #banner .banner-box button { align-self: center; }
+}
+
+
+@media (min-width: 1100px) {
+  #banner .banner-box { min-height: 36vh; } 
+}
 
 
 @media (max-width: 900px) {
