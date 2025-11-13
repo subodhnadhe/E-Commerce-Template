@@ -273,3 +273,6 @@ p{
     color: #153936;
     font-weight: 500;
 }
+.about-para{
+    display:flex;
+}
